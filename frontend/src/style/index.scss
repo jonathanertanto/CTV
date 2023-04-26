@@ -115,13 +115,12 @@ button{
     @media screen and (min-width: 900px){
         & li{
             float: left;
-            width: 12vw;
+            width: 25vw;
             margin-top: 0;
             margin-bottom: 0;
             margin-right: 20px;
         }
     }
-
 
     & hr{
         border: none;
@@ -130,6 +129,37 @@ button{
         background-color: $lightgrey;
         width: 95%;
         margin-left: 2.5%;
+    }
+
+    & .topnav {
+        display: block;
+        float: left;
+        position: relative;
+
+        & a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;
+        }
+        
+        & button.icon {
+            border: none;
+            outline: none;
+            color: $lightgreen;
+            background-color: inherit;
+            padding: 5px 15px;
+            margin: 0;
+            font-weight: inherit;
+            text-transform: inherit;
+            height: 40px;
+        }
+        
+        & button:hover {
+            color: $darkgreen;
+        }
+
     }
 }
 
@@ -230,3 +260,16 @@ button{
     }
 }
 
+// ----- LOG TABLE -----
+.logTable{
+    margin-right: 2vw;
+    margin-left: 2vw;
+    
+    & button{
+        float: right;
+        max-width: 300px;
+        width: 30vw;
+        min-width: 175px;
+        height: 40px;
+    }
+}

@@ -99,7 +99,7 @@ button:hover {
 @media screen and (min-width: 900px) {
   .menu-bar li {
     float: left;
-    width: 12vw;
+    width: 25vw;
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 20px;
@@ -112,6 +112,32 @@ button:hover {
   background-color: #ADADAD;
   width: 95%;
   margin-left: 2.5%;
+}
+.menu-bar .topnav {
+  display: block;
+  float: left;
+  position: relative;
+}
+.menu-bar .topnav a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+.menu-bar .topnav button.icon {
+  border: none;
+  outline: none;
+  color: #75A3A3;
+  background-color: inherit;
+  padding: 5px 15px;
+  margin: 0;
+  font-weight: inherit;
+  text-transform: inherit;
+  height: 40px;
+}
+.menu-bar .topnav button:hover {
+  color: #115F5F;
 }
 
 .signin-form {
@@ -202,4 +228,15 @@ button:hover {
   .half-field .right-field {
     margin-left: 5px;
   }
+}
+.logTable {
+  margin-right: 2vw;
+  margin-left: 2vw;
+}
+.logTable button {
+  float: right;
+  max-width: 300px;
+  width: 30vw;
+  min-width: 175px;
+  height: 40px;
 }/*# sourceMappingURL=index.css.map */
