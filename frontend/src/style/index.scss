@@ -1,0 +1,232 @@
+// -----COLOR PALETTE-----
+$darkgrey: #272727;
+$lightgrey: #ADADAD;
+$lightgreen: #75A3A3;
+$mediumgreen: #AAD0D0;
+$darkgreen: #115F5F;
+$black: #233340;
+$neongreen: #BDCFCF;
+$greyish: #C4C4C4;
+$greenish: #BDCFCF;
+$grey: #C4C4C4;
+$greentogrey: #BECFCF;
+$inputgrey: #C4C4C4;
+
+// -----GENERAL-----
+html{
+    box-sizing: border-box;
+}
+html *{
+    font-family: 'verdana';
+}
+body{
+    background-color: $darkgrey !important;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+.content{
+    padding-top: 110px;
+}
+input{
+    background-color: $inputgrey;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    overflow: scroll;
+}
+button{
+    font-weight: 700;
+    background: #B4D1D1;
+    color: #1A2630;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase !important;
+    &:hover{
+        background: #3d6464;
+        color: #B4D1D1;
+    }
+}
+
+// ----- NAVBAR -----
+.menu-bar{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    & ul {
+        list-style-type: none;
+        margin: 0 !important;
+        padding: 1.5vw !important;
+        overflow: hidden;
+        background-color: $darkgrey;
+    }
+
+    & .logo{
+        width: 50px;
+        height: 60px;
+        float: right;
+        background-color: transparent;
+        margin-right: 2.5vw;
+        margin-bottom: 30px;
+        margin-top: -30px;
+    
+        & a{
+            text-align: right;
+            font-size: 50px;
+            color: $neongreen;
+        }
+    
+        & a:hover:not(.active), .active{
+            background-color: transparent;
+        }
+    }
+
+    & li {
+        border-radius: 10px;
+        background-color: $lightgreen;
+        min-width: 150px;
+        height: 40px;
+        & a {
+            display: block;
+            color: $black;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            &.active{
+                color: $mediumgreen;
+            }
+        }
+
+        & a:hover:not(.active), .active{
+            background-color: $darkgreen;
+            color: $mediumgreen;
+            border-radius: 10px;
+            height: 40px;
+        }
+
+    }
+    @media screen and (min-width: 900px){
+        & li{
+            float: left;
+            width: 12vw;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+    }
+
+
+    & hr{
+        border: none;
+        height: 3px;
+        color: $lightgrey;
+        background-color: $lightgrey;
+        width: 95%;
+        margin-left: 2.5%;
+    }
+}
+
+// ----- SIGN IN -----
+.signin-form{
+    text-align: center;
+
+    & .title{
+        font-size: 100px;
+        font-weight: 700;
+        color: #C4C4C4;
+        margin: 0;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+    & .checkbox{
+        text-align: center;
+        color: $greentogrey;
+        margin-top: 25px;
+        & input{
+            height: 14px;
+        }
+    }
+    & button{
+        min-width: 410px;
+        width: 50vw;
+        height: 50px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    @media screen and (max-width: 399px){
+        button{
+            min-width: 0;
+            width: 90vw;
+        }
+    }
+    & a{
+        color: #78A3A3;
+        text-decoration: underline;
+        &:hover{
+            color: #78A3A3;
+            text-decoration: none;
+        }
+    }
+
+    & .forgot-password{
+        margin: 0;
+        margin-bottom: 50px;
+        & a{
+            color: #C27272;
+            text-decoration: none;
+        }
+    }
+}
+
+.form-floating{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 410px;
+    width: 50vw;
+
+    & input, input:focus{
+        background-color: $grey;
+    }
+    & input{
+        text-align: left;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 399px){
+    .form-floating{
+        min-width: 0;
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .half-field{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        & .left-field, .right-field{
+            min-width: 200px;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: 24.7vw;
+        }
+
+        & .left-field{
+            margin-right: 5px;
+        }
+        & .right-field{
+            margin-left: 5px;
+        }
+    }
+}
+
