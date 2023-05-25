@@ -1,5 +1,6 @@
 // -----COLOR PALETTE-----
 $darkgrey: #272727;
+$mediumgrey: #5B5B5B;
 $lightgrey: #ADADAD;
 $lightgreen: #75A3A3;
 $mediumgreen: #AAD0D0;
@@ -317,6 +318,115 @@ button{
         }
         & .right-field{
             margin-left: 5px;
+        }
+    }
+}
+
+// ----- HOMEPAGE -----
+$uploadLogoWidth : 25vw;
+.homepage{
+    width: 98%;
+    & .MuiSvgIcon-root{
+        width: $uploadLogoWidth !important;
+        height: $uploadLogoWidth !important;
+        color: white;
+    }
+    & button{
+        background-color: transparent;
+        color: transparent;
+        & :hover{
+            color: $lightgrey;
+        }
+    }
+}
+.loading-txt{
+    color: white;
+    font-size: 50px;
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.upload-btn{
+    text-align: center;
+    float: left;
+    margin-left: 100px;
+    & h1{
+        color: white;
+        margin-top: -30px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        & :hover{
+            color: $lightgrey;
+        }
+    }
+}
+.upload-btn-2{
+    float: right;
+    & .MuiSvgIcon-root{
+        width: 75px !important;
+        height: 75px !important;
+        color: white;
+    }
+    & h1{
+        color: white;
+        margin: auto;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10px;
+        & :hover{
+            color: $lightgrey;
+        }
+    }
+}
+.web-desc{
+    float: right;
+    padding-right: 30px;
+    margin-top: 70px;
+    text-align: center;
+    width: 65%;
+    & h1{
+        margin: auto;
+        color: white;
+        font-weight: 700;
+        font-size: 40px;
+    }
+    & hr{
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: none;
+        height: 3px;
+        color: $lightgrey;
+        background-color: $lightgrey;
+        width: inherit;
+    }
+    & p{
+        margin: auto;
+        color: $greyish;
+        font-size: 20px;
+        width: 50%;
+    }
+}
+.pediction-result{
+    text-align: center;
+    margin-right: 75px;
+    & img{
+        width: 50%;
+    }
+    & .crime-type{
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        background-color: $mediumgrey;
+        width: 45%;
+        height: 150px;
+        & h1{
+            margin: auto;
+            padding-top: 49px;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
         }
     }
 }
