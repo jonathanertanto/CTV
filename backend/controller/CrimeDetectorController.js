@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
             const type = String(result[0]).trim();
             const imageScene = String(result[1]).trim();
             console.log(type + "," + imageScene);
-            const labels = ["Abuse", "Arrest", "Explosion", "Fighting", "NormalVideos", "RoadAccidents", "Robbery", "Shooting", "Shoplifting", "Vandalism"];
+            const labels = ["Abuse", "Arrest", "Explosion", "Fighting", "None", "RoadAccidents", "Robbery", "Shooting", "Shoplifting", "Vandalism"];
             if(labels.includes(type)){
                 const sourcePath = path.join(__dirname, `../data/${videoTitle}/${imageScene}`);
                 const destinationPath = path.join(__dirname, `../../frontend/public/result.png`);

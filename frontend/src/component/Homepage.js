@@ -68,12 +68,12 @@ export const Homepage = _ => {
                 <div id="webDesc" className="web-desc" style={{display: getHomepageStatus() === "1" ? "none" : "block"}} >
                     <h1>Real-world Anomaly Detector</h1>
                     <hr/>
-                    <p>Upload a video with a .mp4 file format. This system will process the video and return the result if the uploaded video is normal or containts any anomalies.</p>
+                    <p>Upload a video with a .mp4 file format. This system will process the video and return the result if the uploaded video is normal or contains any anomalies.</p>
                 </div>
                 <div id="predictionResult" className="pediction-result" style={{display: getHomepageStatus() === "1" ? "block" : "none"}}>
                     <img id="imgResult" src="result.png" alt="result" />
                     <div className="crime-type" >
-                        <h1 id="crimeTypeTxt">{`CRIME TYPE: ${getPredictionResult()}`}</h1>
+                        <h1 id="crimeTypeTxt">{`ANOMALY DETECTED: ${getPredictionResult()}`}</h1>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@ const analyseVideo = async (fileName) => {
         document.getElementById("resultPage").style.display = "block";
         document.getElementById("uploadBtn").className = "upload-btn-2";
         document.getElementById("predictionResult").style.display = "block";
-        document.getElementById("crimeTypeTxt").innerHTML = ("CRIME TYPE: " + data.type);
+        document.getElementById("crimeTypeTxt").innerHTML = ("ANOMALY DETECTED: " + data.type);
         sessionStorage.setItem("predictionRes", data.type);
         sessionStorage.setItem("homepageStatus", "1");
     }
