@@ -50,6 +50,8 @@ export const Homepage = _ => {
         document.getElementById("resultPage").style.display = "none";
         document.getElementById("webDesc").style.display = "none";
         document.getElementById("loadingTxt").style.display = "block";
+        document.getElementById("predictionResult").style.display = "none";
+        document.getElementById("imgResult").src = "";
         analyseVideo(fileObj.name);
         event.target.value = null;
     };
@@ -98,6 +100,7 @@ const analyseVideo = async (fileName) => {
         document.getElementById("uploadBtn").className = "upload-btn-2";
         document.getElementById("predictionResult").style.display = "block";
         document.getElementById("crimeTypeTxt").innerHTML = ("ANOMALY DETECTED: " + data.type);
+        document.getElementById("imgResult").src = "result.png";
         sessionStorage.setItem("predictionRes", data.type);
         sessionStorage.setItem("homepageStatus", "1");
     }
