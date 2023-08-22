@@ -201,24 +201,33 @@ button{
     right: 0;
     margin-right: 3vw;
     margin-top: 50px;
-}
-.topnav-dropdown-content a {
-    float: none;
-    color: $kindofblack;
-    text-align: center;
-    padding: 20px 15px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-.topnav-dropdown-content a:hover {
-    background-color: rgba(121, 121, 121, 0.705);
-    border-bottom: transparent;
-    display: block;
-}
-.topnav-dropdown-content a.active {
-    border-bottom: none;
-    background-color: rgba(121, 121, 121, 0.705);
+    padding: 5px;
+    & svg{
+        margin-right: 5px;
+    }
+    & a, button {
+        float: none;
+        color: $kindofblack;
+        background-color: transparent !important;
+        font-weight: 400;
+        font-size: 15px;
+        text-transform: none !important;
+        text-align: center;
+        padding: 20px 15px;
+        text-decoration: none;
+        display: block;
+        text-align: right;
+        &:hover {
+            background-color: rgba(121, 121, 121, 0.705) !important;
+            border-bottom: transparent;
+            display: block;
+            color: $kindofblack;
+        }
+        &.active {
+            border-bottom: none;
+            background-color: rgba(121, 121, 121, 0.705);
+        }
+    }
 }
 .topnav-dropdown:hover .topnav-dropdown-content {
     position: fixed;
@@ -443,4 +452,191 @@ $uploadLogoWidth : 25vw;
         min-width: 175px;
         height: 40px;
     }
+}
+
+// -----POPUP WINDOW-----
+.form-popup {
+    display: none;
+    position: fixed !important;
+    z-index: 9;
+    padding: auto;
+    overflow: scroll;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px 20px #0000006a;
+    margin: auto;
+
+    & .content-form {
+        margin: 20px 40px;
+
+        & .header {
+            display: flex;
+
+            & h2 {
+                margin: 0;
+            }
+
+            & svg {
+                margin-right: 10px !important;
+            }
+
+            & .close-button {
+                float: right;
+                text-align: right;
+                margin: auto;
+                margin-right: -10px;
+                background-color: transparent;
+                border: none;
+                color: black;
+            }
+        }
+    }
+
+    & h1,
+    h2,
+    h3,
+    .pop-up-input {
+        margin: 20px 0;
+    }
+
+    & h1 {
+        font-size: 24px;
+        color: #343741;
+        font-weight: 700;
+    }
+
+    & h2 {
+        font-size: 20px;
+    }
+
+    & h3,
+    label,
+    input::placeholder {
+        font-size: 14px;
+        color: #ACACAC;
+    }
+
+    & hr {
+        margin: 20px -40px;
+        width: auto;
+
+    }
+
+    & .pop-up-input {
+        display: grid;
+
+        & .dropdown button {
+            color: black;
+            text-align: left;
+        }
+
+        & input,
+        button,
+        .dropdown,
+        textarea {
+            height: 48px !important;
+            border-radius: 4px;
+        }
+
+        & input {
+            width: 100%;
+            text-align: left;
+        }
+
+        & input,
+        .dropdown,
+        .dropdown-menu,
+        textarea {
+            background-color: #f1f1f1;
+        }
+
+        & textarea {
+            height: 10vh !important;
+        }
+
+        & textarea:focus,
+        input:focus {
+            outline: none;
+            border-bottom: 1.5px solid #5D5FEF;
+        }
+    }
+
+    & .pop-up-button {
+        display: flex;
+        float: right;
+        margin-bottom: 12px;
+
+        & button {
+            min-height: fit-content;
+            height: 5vh;
+            width: 7vw;
+            border-radius: 8px;
+            border: 1.5px solid transparent;
+            font-size: 16px;
+        }
+
+        & .cancel-button {
+            background-color: transparent;
+            margin-right: 20px;
+            color: black;
+
+        }
+
+        & .next-button {
+            background-color: #A2ABBA;
+            color: white;
+        }
+    }
+
+    & .title {
+        display: flex;
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: -10px;
+
+        & button {
+            color: #ACACAC;
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        & span {
+            font-size: 20px;
+        }
+    }
+}
+
+.form-container {
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container {
+
+    & input,
+    select,
+    textarea {
+        padding: 15px;
+        margin: 5px 0 0 0;
+        border: none;
+        background: #f1f1f1;
+    }
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    outline: none;
+}
+
+.form-floating select {
+    height: calc(3.5rem + 2px);
+}
+
+$create-form-width: 40vw;
+.create-form{
+    margin-top: 30px;
+    height: fit-content;
+    // max-height: $create-form-height;
+    width: $create-form-width;
+    left: calc((100vw - $create-form-width) / 2);
+    right: calc((100vw - $create-form-width) / 2);
 }

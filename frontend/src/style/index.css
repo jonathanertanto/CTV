@@ -179,25 +179,31 @@ button:hover {
   right: 0;
   margin-right: 3vw;
   margin-top: 50px;
+  padding: 5px;
 }
-
-.topnav-dropdown-content a {
+.topnav-dropdown-content svg {
+  margin-right: 5px;
+}
+.topnav-dropdown-content a, .topnav-dropdown-content button {
   float: none;
   color: #0a0a0a;
+  background-color: transparent !important;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: none !important;
   text-align: center;
   padding: 20px 15px;
   text-decoration: none;
   display: block;
-  text-align: center;
+  text-align: right;
 }
-
-.topnav-dropdown-content a:hover {
-  background-color: rgba(121, 121, 121, 0.705);
+.topnav-dropdown-content a:hover, .topnav-dropdown-content button:hover {
+  background-color: rgba(121, 121, 121, 0.705) !important;
   border-bottom: transparent;
   display: block;
+  color: #0a0a0a;
 }
-
-.topnav-dropdown-content a.active {
+.topnav-dropdown-content a.active, .topnav-dropdown-content button.active {
   border-bottom: none;
   background-color: rgba(121, 121, 121, 0.705);
 }
@@ -417,4 +423,165 @@ button:hover {
   width: 30vw;
   min-width: 175px;
   height: 40px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed !important;
+  z-index: 9;
+  padding: auto;
+  overflow: scroll;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px 20px rgba(0, 0, 0, 0.4156862745);
+  margin: auto;
+}
+.form-popup .content-form {
+  margin: 20px 40px;
+}
+.form-popup .content-form .header {
+  display: flex;
+}
+.form-popup .content-form .header h2 {
+  margin: 0;
+}
+.form-popup .content-form .header svg {
+  margin-right: 10px !important;
+}
+.form-popup .content-form .header .close-button {
+  float: right;
+  text-align: right;
+  margin: auto;
+  margin-right: -10px;
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+.form-popup h1,
+.form-popup h2,
+.form-popup h3,
+.form-popup .pop-up-input {
+  margin: 20px 0;
+}
+.form-popup h1 {
+  font-size: 24px;
+  color: #343741;
+  font-weight: 700;
+}
+.form-popup h2 {
+  font-size: 20px;
+}
+.form-popup input::-moz-placeholder {
+  font-size: 14px;
+  color: #ACACAC;
+}
+.form-popup h3,
+.form-popup label,
+.form-popup input::placeholder {
+  font-size: 14px;
+  color: #ACACAC;
+}
+.form-popup hr {
+  margin: 20px -40px;
+  width: auto;
+}
+.form-popup .pop-up-input {
+  display: grid;
+}
+.form-popup .pop-up-input .dropdown button {
+  color: black;
+  text-align: left;
+}
+.form-popup .pop-up-input input,
+.form-popup .pop-up-input button,
+.form-popup .pop-up-input .dropdown,
+.form-popup .pop-up-input textarea {
+  height: 48px !important;
+  border-radius: 4px;
+}
+.form-popup .pop-up-input input {
+  width: 100%;
+  text-align: left;
+}
+.form-popup .pop-up-input input,
+.form-popup .pop-up-input .dropdown,
+.form-popup .pop-up-input .dropdown-menu,
+.form-popup .pop-up-input textarea {
+  background-color: #f1f1f1;
+}
+.form-popup .pop-up-input textarea {
+  height: 10vh !important;
+}
+.form-popup .pop-up-input textarea:focus,
+.form-popup .pop-up-input input:focus {
+  outline: none;
+  border-bottom: 1.5px solid #5D5FEF;
+}
+.form-popup .pop-up-button {
+  display: flex;
+  float: right;
+  margin-bottom: 12px;
+}
+.form-popup .pop-up-button button {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  height: 5vh;
+  width: 7vw;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  font-size: 16px;
+}
+.form-popup .pop-up-button .cancel-button {
+  background-color: transparent;
+  margin-right: 20px;
+  color: black;
+}
+.form-popup .pop-up-button .next-button {
+  background-color: #A2ABBA;
+  color: white;
+}
+.form-popup .title {
+  display: flex;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  margin-left: -10px;
+}
+.form-popup .title button {
+  color: #ACACAC;
+  background-color: transparent;
+  border-color: transparent;
+}
+.form-popup .title span {
+  font-size: 20px;
+}
+
+.form-container {
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  padding: 15px;
+  margin: 5px 0 0 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  outline: none;
+}
+
+.form-floating select {
+  height: calc(3.5rem + 2px);
+}
+
+.create-form {
+  margin-top: 30px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 40vw;
+  left: 30vw;
+  right: 30vw;
 }/*# sourceMappingURL=index.css.map */

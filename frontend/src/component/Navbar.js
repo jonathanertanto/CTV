@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { getUserID, logOut } from "../App";
-import { MeetingRoom } from '@material-ui/icons/';
+// eslint-disable-next-line
+import { MeetingRoom, Settings } from '@material-ui/icons/';
 
 export const Navbar = (props) => {
     const [userID, setUserID] = useState("none");
@@ -36,6 +37,7 @@ const accountMenu = (userID) => {
             <li id="logo" className="logo" ><a href="/" onClick={setHomepageStatusFalse}>CTV</a></li>
             {userID !== "none" && 
             <div className="topnav-dropdown-content">
+                {/* <button onClick={null}><Settings />Set Folder Directory</button> */}
                 <a href="/signin" onClick={logOut}><MeetingRoom />Log Out</a>
             </div>
             }

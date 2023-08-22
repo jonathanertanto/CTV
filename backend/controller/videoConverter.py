@@ -35,7 +35,7 @@ def save_frame(video_path, save_dir, gap=10):
 
 if __name__ == "__main__":
     path = sys.argv[1]
-    save_dir = "/Users/jonathan/Library/CloudStorage/OneDrive-UTS/2023-Autumn-y3/42028 Deep Learning and Convolutional Neural Network/Assignment 3/CTV/backend/data"
+    save_dir = os.getcwd() + "/data"
 
     # for path in video_paths:
     save_frame(path, save_dir, gap=10)

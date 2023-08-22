@@ -5,7 +5,7 @@ import os
 import tensorflow as tf
 from tensorflow import keras
 
-model = tf.keras.models.load_model('/Users/jonathan/Library/CloudStorage/OneDrive-UTS/2023-Autumn-y3/42028 Deep Learning and Convolutional Neural Network/Assignment 3/CTV/backend/python_model/googlenetModel.hdf5')
+model = tf.keras.models.load_model(os.getcwd() + '/python_model/googlenetModel.hdf5')
 
 class_names = ["Abuse", "Arrest", "Explosion", "Fighting", "None", "RoadAccidents", "Robbery", "Shooting", "Shoplifting", "Vandalism"]
 

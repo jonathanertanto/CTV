@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
         py.on('close', (code) => {
             console.log(`child process close all stdio with code ${code}`);
         });
+        console.log("Video Converter Executed");
     }catch(error){
         console.log(error);
         return res.status(400).json({

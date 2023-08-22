@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { getUserID } from "../App";
+import { FolderDirectorySetting } from "./FolderDirectorySetting";
 
 export const Homepage = _ => {
     const [userID, setUserID] = useState();
+    const [directory, setDirectory] = useState("");
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -21,7 +23,11 @@ export const Homepage = _ => {
         return String(sessionStorage.getItem("predictionRes"));
     };
     const openFileExplorer = _ => {
-        inputRef.current.click();
+        if(!directory){
+            document.getElementById("setFolderDirectoryForm").style.display = "block";
+        }else{
+            inputRef.current.click();
+        }
     };
     const convertVideo = (path) => {
         try{
@@ -46,7 +52,7 @@ export const Homepage = _ => {
         const fileObj = event.target.files && event.target.files[0];
         if (!fileObj)
             return;
-        convertVideo("/Users/jonathan/Downloads/SampleVideoToUpload/"+fileObj.name);
+        convertVideo(`${directory}/${fileObj.name}`);
         document.getElementById("resultPage").style.display = "none";
         document.getElementById("webDesc").style.display = "none";
         document.getElementById("loadingTxt").style.display = "block";
@@ -60,6 +66,10 @@ export const Homepage = _ => {
 
     return(
         <section className="homepage">
+            <FolderDirectorySetting
+                inputRef = {inputRef}
+                setDirectory = {setDirectory}
+            />
             <div id="loadingTxt" style={{display: 'none'}} className="loading-txt">Loading data, please wait...</div> 
             <div id="resultPage">
                 <div id="uploadBtn" className={getHomepageStatus() === "1" ? "upload-btn-2" : "upload-btn"}>
@@ -70,7 +80,7 @@ export const Homepage = _ => {
                 <div id="webDesc" className="web-desc" style={{display: getHomepageStatus() === "1" ? "none" : "block"}} >
                     <h1>Real-world Anomaly Detector</h1>
                     <hr/>
-                    <p>Upload a video with a .mp4 file format. This system will process the video and return the result if the uploaded video is normal or contains any anomalies.</p>
+                    <p>Set a fix folder directory consisting of list of videos to be uploaded. Upload the video with a .mp4 file format. This system will process the video and return the result if the uploaded video is normal or contains any anomalies.</p>
                 </div>
                 <div id="predictionResult" className="pediction-result" style={{display: getHomepageStatus() === "1" ? "block" : "none"}}>
                     <img id="imgResult" src="result.png" alt="result" />
